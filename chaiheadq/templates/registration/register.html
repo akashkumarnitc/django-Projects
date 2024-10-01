@@ -1,11 +1,18 @@
 {% extends "layout.html" %}
-<h1>Register</h1>
-{% block content  %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button class="btn btn-primary">Register</button>
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;" >
+    <div class="col-md-6 col-lg-4 col-sm-12 background:#111;">
+        <div class="card shadow-sm p-4">
+            <h1 class="text-center mb-4">Register</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">Register</button>
+            
+            </form>
+            <p class="text-center mt-3">Go back to Home <a href="{% url 'tweet_list' %}">Home</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-</form>
-
-{% endblock  %}

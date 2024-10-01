@@ -1,12 +1,35 @@
 {% extends "layout.html" %}
-<h1>Login</h1>
-{% block content  %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button class="btn btn-primary">Login</button>
 
-</form>
-<p>Don't have an account? <a href="{%url 'register'%}">Register</a></p>
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;" >
+    <div class="col-md-6 col-lg-4 col-sm-12 background:#111;">
+        <div class="card shadow-sm p-4">
+            <h1 class="text-center mb-4">Login</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary">Login</button>
+                </div>
+            
+            </form>
+            <p class="text-center mt-3">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-{% endblock  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
