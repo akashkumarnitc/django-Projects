@@ -25,7 +25,7 @@ from tweet import views
 
 urlpatterns = [
 
-    path('',views.index,name='index'),
+    path('',include('tweet.urls')),
     path('admin/', admin.site.urls),
     path('tweet/', include('tweet.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
